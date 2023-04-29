@@ -252,4 +252,4 @@ async function loadDirectLink() {
         }
     }
 };
-// loadDirectLink();
+loadDirectLink();
