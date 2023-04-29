@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------------------------------
+How to use the part parameter
+The part parameter is a required parameter for any API request that retrieves or returns a resource. The parameter identifies one or more top-level (non-nested) resource properties that should be included in an API response. For example, a video resource has the following parts:
+
+snippet
+contentDetails
+fileDetails
+player
+processingDetails
+recordingDetails
+statistics
+status
+suggestions
+topicDetails
+
+--------------------------------------------------------------------------------------------------------
+load data of one video card
+ 
+ part is a string
+
+The part parameter specifies a comma-separated list of one or more search resource properties that the API response will include. Set the parameter value to snippet.
+ 
+ part => 'snippet,statistics'
+
+url is  => `https://www.googleapis.com/youtube/v3/videos?key=${apiKey}&id=${videoId}&part=${part}`;
+
+--------------------------------------------------------------------------------------------------------
+
+search keyword of video in database
+
+search string will be data value entered by user
+
+url is => https://www.googleapis.com/youtube/v3/search?key=${apiKey}&q=${searchString}&type=video`;
+
+--------------------------------------------------------------------------------------------------------
+
+const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=&type=video&videoCategoryId=${id}&key=${apiKey}`;
